@@ -6,7 +6,7 @@ pipeline {
     stage('Maven Install') {
       agent {
         docker {
-          image 'maven:3.5.3'
+          image 'maven:3.5.0'
         }
       }
       steps {
@@ -15,9 +15,3 @@ pipeline {
     }
   }
 }
- stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t shabanaat/spring-petclinic:latest .'
-      }
- }
