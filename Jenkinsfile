@@ -20,4 +20,4 @@ pipeline {
       steps {
         sh 'docker build -t shabanaat/spring-petclinic:latest .'
       }
-  
+ }
