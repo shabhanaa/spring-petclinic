@@ -21,5 +21,5 @@ pipeline {
         sh 'docker build -t shabanaat/spring-petclinic:latest .'
       }
     }
-  }
-}
+  
+
