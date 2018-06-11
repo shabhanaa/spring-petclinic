@@ -15,12 +15,7 @@ pipeline {
     } 
   }
 }
- stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t shabanaat/spring-petclinic:latest .'
-      }
-    }
+ 
  stage('Docker Push') {
       agent any
       steps {
