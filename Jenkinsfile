@@ -21,8 +21,6 @@ stage('Docker Build') {
         sh 'docker build -t shabanaat/spring-petclinic:latest .'
       }
     }
-  }
-}
  
  stage('Docker Push') {
       agent any
