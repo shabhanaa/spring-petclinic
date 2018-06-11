@@ -1,4 +1,5 @@
-#!grovy
+
+#!groovy
 
 pipeline {
   agent none
@@ -15,7 +16,6 @@ pipeline {
     }
   }
 }
-
 
  
 
