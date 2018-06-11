@@ -22,9 +22,6 @@ pipeline {
   }
 }
 
-import jenkins.model.*
-jenkins = Jenkins.instance
-
  stage('Docker Push') {
       agent any
       steps {
