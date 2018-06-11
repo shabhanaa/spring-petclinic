@@ -21,5 +21,15 @@ pipeline {
         sh 'docker build -t shabanaat/spring-petclinic:latest .'
       }
     }
+ stage('Docker Push') {
+      agent any
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'shabanaa21', usernameVariable: 'shabanaat')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push shabanaat/spring-petclinic:latest'
+        }
+      }
+    }
+  
  
 
