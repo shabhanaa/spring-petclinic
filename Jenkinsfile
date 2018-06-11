@@ -1,5 +1,5 @@
 
-#!groovy
+#!grovy
 
 pipeline {
   agent none
