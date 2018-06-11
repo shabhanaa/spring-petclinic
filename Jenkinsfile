@@ -23,7 +23,6 @@ pipeline {
 }
 
  stage('Docker Push') {
-      agent any
       steps {
        // withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'shabanaa21', usernameVariable: 'shabanaat')]) {
           sh "docker login -u shabanaat -p shabanaa21"
