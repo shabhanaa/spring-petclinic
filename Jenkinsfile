@@ -1,4 +1,3 @@
-
 #!grovy
 
 pipeline {
@@ -14,8 +13,5 @@ pipeline {
         sh 'mvn clean install'
       }
     }
-  }
-}
-
  
 
