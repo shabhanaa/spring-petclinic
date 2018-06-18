@@ -16,7 +16,8 @@ pipeline {
   stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t shabanaat/spring-petclinic:latest --target build-env .'
+       sh 'docker build -t shabanaat/spring-petclinic:latest .'
+       sh 'docker tag shabanaat/spring-petclinic:latest:2'
       }
     }
   }
