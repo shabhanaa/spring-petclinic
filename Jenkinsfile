@@ -1,25 +1,5 @@
-#!groovy
-
-pipeline {
-  agent none
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
-        }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
-    } 
-  stage('Docker Build') {
-      agent any
-      steps {
-       sh 'docker build -t shabanaat/spring-petclinic:latest .'
-       sh 'docker tag shabanaat/spring-petclinic shabanaat/spring-petclinic:2'
-      }
+node{
+stage('Checkout') {
+        checkout scm
     }
-  }
 }
-
