@@ -22,3 +22,5 @@ stage('Checkout') {
           sh 'docker push shabanaat/spring-petclinic:latest'
         
 }
+     }
+}
