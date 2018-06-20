@@ -11,4 +11,9 @@ stage('Checkout') {
                 sh 'mvn clean install'
         }
         
+    stage('Create Docker Image') {
+    
+      docker.build("shabanaat/spring-petclinic:${env.BUILD_NUMBER")
+    }
+        
 }
