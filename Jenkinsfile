@@ -17,7 +17,7 @@ stage('Checkout') {
     }
         
      stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
           sh 'docker push shabanaat/spring-petclinic:latest'
         
 }
