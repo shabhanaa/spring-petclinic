@@ -2,7 +2,7 @@ node{
 stage('Checkout') {
         checkout scm
     }
-        steps('Build'){
+        stage('Build'){
                 sh 'mvn clean install'
         }
         
