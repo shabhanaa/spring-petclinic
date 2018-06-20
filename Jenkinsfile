@@ -1,4 +1,3 @@
-def 
 node{
         stage('Initialize'){
                 def mvnHome = tool 'Mymaven'
