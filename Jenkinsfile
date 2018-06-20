@@ -13,7 +13,7 @@ stage('Checkout') {
         
     stage('Create Docker Image') {
     
-      docker.build("shabanaat/spring-petclinic:${env.BUILD_NUMBER")
+            docker.build("shabanaat/spring-petclinic:${env.BUILD_NUMBER}")
     }
         
 }
