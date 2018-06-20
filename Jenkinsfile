@@ -16,10 +16,11 @@ stage('Checkout') {
             docker.build("shabanaat/spring-petclinic:${env.BUILD_NUMBER}")
     }
         
-     stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+        stage('Push to Docker Registry'){
+          withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push shabanaat/spring-petclinic:latest'
-        
-}
      }
 }
+}
+
