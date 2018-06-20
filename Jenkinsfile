@@ -1,4 +1,10 @@
+def 
 node{
+        stage('Initialize'){
+                def mvnHome = tool 'Mymaven'
+    env.PATH = "${mvnHome}/bin:${env.PATH}"
+        }                
+        
 stage('Checkout') {
         checkout scm
     }
