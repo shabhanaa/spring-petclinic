@@ -25,9 +25,7 @@ stage('Checkout') {
 }
         stage('Dev-Deploy'){
                 //sh "ssh root@192.168.91.59"
-                sh "ssh -i -v -o StrictHostKeyChecking=no  root@192.168.91.59"
-                sh 'docker pull shabanaat/spring-petclinic'
-                sh 'docker run -d -t 8050:8080 shabanaat/spring-petclinic'
+                sh "cd /home/shabana/ connect.sh"
                
 }
 }
