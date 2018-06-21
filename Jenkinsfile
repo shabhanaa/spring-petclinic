@@ -29,4 +29,5 @@ stage('Checkout') {
                 sh 'docker run -d -t 8050:8080 shabanaat/spring-petclinic'
                
 }
+}
 
