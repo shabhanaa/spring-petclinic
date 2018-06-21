@@ -1,6 +1,7 @@
 node{
         stage('Initialize'){
                 def mvnHome = tool 'Mymaven'
+                //def sshHost = '192.168.91.59'
     env.PATH = "${mvnHome}/bin:${env.PATH}"
         }                
         
@@ -23,7 +24,7 @@ stage('Checkout') {
      }
 }
         stage('Dev-Deploy'){
-                sh ‘ssh root@192.168.91.59’
+                sh ‘sh connect.sh’
                 sh 'docker pull shabanaat/spring-petclinic'
                 sh 'docker run -d -t 8050:8080 shabanaat/spring-petclinic'
                
