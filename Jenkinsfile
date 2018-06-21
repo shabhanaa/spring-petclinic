@@ -25,7 +25,7 @@ stage('Checkout') {
 }
         stage('Dev-Deploy'){
                 //sh "ssh root@192.168.91.59"
-                sh "cd /home/shabana/ connect.sh"
+                sh " /home/shabana/connect.sh"
                
 }
 }
