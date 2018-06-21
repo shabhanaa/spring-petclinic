@@ -24,7 +24,7 @@ stage('Checkout') {
      }
 }
         stage('Dev-Deploy'){
-                sh ‘sh connect.sh’
+                sh ‘connect.sh’
                 sh 'docker pull shabanaat/spring-petclinic'
                 sh 'docker run -d -t 8050:8080 shabanaat/spring-petclinic'
                
