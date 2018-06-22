@@ -32,8 +32,8 @@ stage('Checkout') {
      }
 }
         stage('DeployToDev'){
-        sh 'sudo docker stop spring-petclinic || true && sudo docker rm spring-petclinic || true'
-        sh 'sudo docker run --rm --memory="1400m" --cpus=0.250 --name spring-petclinic -d -p 8085:8080 shabanaat/$JOB_BASE_NAME:$BUILD_ID'
+        sh 'docker stop spring-petclinic || true && sudo docker rm spring-petclinic || true'
+        sh 'docker run --rm --memory="1400m" --cpus=0.250 --name spring-petclinic -d -p 8085:8080 shabanaat/$JOB_BASE_NAME:$BUILD_ID'
     }
        
 }
