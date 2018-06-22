@@ -32,7 +32,7 @@ stage('Checkout') {
      }
 }
         stage('DeployToDev'){
-        sh 'docker stop spring-petclinic || true && sudo docker rm spring-petclinic || true'
+        sh 'docker stop spring-petclinic || true && docker rm spring-petclinic || true'
         sh 'docker run --rm --memory="1400m" --cpus=0.250 --name spring-petclinic -d -p 8050:8080 shabanaat/$JOB_BASE_NAME:$BUILD_ID'
     }
        
