@@ -12,6 +12,10 @@ stage('Checkout') {
                 sh 'mvn clean install'
         }
         
+        stage('Sonar'){
+                sh "mvn sonar:sonar"
+        }
+        
     stage('Create Docker Image') {
     
             docker.build("shabanaat/spring-petclinic:${env.BUILD_NUMBER}")
