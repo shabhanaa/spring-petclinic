@@ -12,8 +12,11 @@ stage('Checkout') {
                 sh 'mvn clean install'
         }
         
-        stage('Sonar'){
-                sh "mvn sonar:sonar"
+      stage('Sonar'){
+        try {
+            sh "mvn sonar:sonar"
+        } catch(error){
+            echo "The sonar server could not be reached ${error}"
         }
         
     stage('Create Docker Image') {
