@@ -30,10 +30,6 @@ stage('Checkout') {
           sh 'docker push shabanaat/spring-petclinic:latest'
      }
 }
-        stage('Dev-Deploy'){
-                //sh "ssh root@192.168.91.59"
-                sh " /home/shabana/connect.sh"
-               
-}
+       
 }
 
