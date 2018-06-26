@@ -36,7 +36,7 @@ stage('Checkout') {
         sh 'docker run --name spring-petclinic -d -p 8050:8080 shabanaat/spring-petclinic'
     }
         
-        stage 'deployment'
+        stage 'deployment'{
        input 'Do you approve deployment?'
        node {
             from: 'tshabanaa@altimetrik.com',
@@ -46,6 +46,6 @@ stage('Checkout') {
             sh 'docker run --name spring-petclinic -d -p 8050:8080 shabanaat/spring-petclinic'
 }
       
-       
+        }
 }
 
