@@ -33,7 +33,7 @@ stage('Checkout') {
 }
         stage('DeployToDev'){
         sh 'docker stop spring-petclinic || true && docker rm spring-petclinic || true'
-        sh 'docker run --name spring-petclinic -d -p 9020:8080 shabanaat/spring-petclinic'
+        sh 'docker run --name spring-petclinic -d -p 9010:8080 shabanaat/spring-petclinic'
                 def cmd = 'dev.altimetrik.com'
                 def sout = new StringBuffer(), serr = new StringBuffer()
                 def proc = ls /spring-petclinic.execute()
