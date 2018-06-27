@@ -33,7 +33,7 @@ stage('Checkout') {
 }
         stage('DeployToDev'){
         sh 'docker stop spring-petclinic || true && docker rm spring-petclinic || true'
-        sh 'docker run --name spring-petclinic -d -p 8050:8080 shabanaat/spring-petclinic'
+        sh 'docker run --name spring-petclinic -d -p 9050:8080 shabanaat/spring-petclinic'
                 
         }
         
