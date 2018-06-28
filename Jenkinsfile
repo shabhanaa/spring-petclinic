@@ -38,7 +38,7 @@ stage('Checkout') {
         }
  stage('Push to Docker Registry'){
           withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-          sh "docker login -u ${env.root} -p ${env.Nova@123}"
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           
           }
     }
