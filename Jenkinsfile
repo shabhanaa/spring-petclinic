@@ -41,7 +41,7 @@ stage('Checkout') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('http://192.168.91.59:5000', 'docker-hub-credentials'){
+        docker.withRegistry('http://192.168.91.59', 'docker-hub-credentials'){
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
         sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
         sh 'docker push shabanaat/spring-petclinic:latest'
