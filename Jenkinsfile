@@ -41,9 +41,8 @@ stage('Checkout') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('http://dev.altimetrik.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+        docker.withRegistry('http://192.168.91.59:5000', 'docker-hub-credentials') {
+            
         }
     }
         
