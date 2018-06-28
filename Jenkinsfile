@@ -41,7 +41,7 @@ stage('Checkout') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://192.168.91.59', 'shabanaat/shabanaa21') {
+        docker.withRegistry('https://192.168.91.59', 'shabanaat/spring-petclinic') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
