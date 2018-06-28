@@ -42,8 +42,7 @@ stage('Checkout') {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('http://192.168.91.59:5000', 'docker-hub-credentials') {
-          app.push("shabanaat/spring-petclinic:latest")
-            
+                      
         }
     }
         
