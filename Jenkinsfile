@@ -19,6 +19,15 @@ stage('Checkout') {
             
         }
        }
+        stage('Junit')
+	{
+        try {
+            sh "mvn test" 
+	    } catch(error)
+	    {
+            echo "The Maven can not perform Junit ${error}"
+            }
+}
         
     stage('Create Docker Image') {
     
