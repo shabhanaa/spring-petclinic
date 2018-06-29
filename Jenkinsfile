@@ -52,6 +52,8 @@ stage('Checkout') {
                 
         }
   
-
+        stage(Checkout multi branch){
+                git([url: 'https://github.com/shabhanaa/spring-petclinic.git', branch: "${env.BRANCH_NAME}", credentialsId: "${env.CREDENTIALS_ID}"])
+}
 }
 
