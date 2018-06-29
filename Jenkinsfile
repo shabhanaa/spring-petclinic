@@ -43,7 +43,7 @@ stage('Checkout') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-       docker pull 192.168.91.59:5000/shabanaat/spring-petclinic
+       docker pull '192.168.91.59:5000'/shabanaat/spring-petclinic
    }
 
 }
